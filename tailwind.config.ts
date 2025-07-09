@@ -8,10 +8,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['PT Sans', 'sans-serif'],
+        headline: ['PT Sans', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +95,25 @@ export default {
             height: '0',
           },
         },
+        'fade-in': {
+          'from': { opacity: '0', transform: 'translateY(10px)' },
+          'to': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-left': {
+          'from': { opacity: '0', transform: 'translateX(-20px)' },
+          'to': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-in-right': {
+          'from': { opacity: '0', transform: 'translateX(20px)' },
+          'to': { opacity: '1', transform: 'translateX(0)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out forwards',
+        'fade-in-left': 'fade-in-left 0.5s ease-out forwards',
+        'fade-in-right': 'fade-in-right 0.5s ease-out forwards',
       },
     },
   },
