@@ -45,7 +45,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <PawPrint className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg font-headline">Pawsitive Image</span>
+          <span className="font-bold text-lg font-headline">Suds n' Wiggles</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end md:flex">
           <NavLinks />
@@ -62,7 +62,7 @@ export function Header() {
               <div className="p-4 pt-8">
                 <Link href="/" className="mb-12 flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                   <PawPrint className="h-8 w-8 text-primary" />
-                  <span className="font-bold text-xl font-headline">Pawsitive Image</span>
+                  <span className="font-bold text-xl font-headline">Suds n' Wiggles</span>
                 </Link>
                 <NavLinks inSheet />
               </div>

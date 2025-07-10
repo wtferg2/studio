@@ -3,8 +3,8 @@ import { PawPrint } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Pawsitive Image',
-  description: 'Learn about the story and passion behind Pawsitive Image dog grooming.',
+  title: 'About Us | Suds n' Wiggles',
+  description: 'Learn about the story and passion behind Suds n' Wiggles dog grooming.',
 };
 
 
@@ -30,13 +30,13 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl font-bold font-headline">Our Story</h1>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
-                Welcome to Pawsitive Image, where our love for dogs is at the heart of everything we do. Founded in 2023, our journey began with a simple mission: to provide a safe, comfortable, and positive grooming experience for every dog that walks through our doors. We saw a need for a salon that prioritized pets' well-being over everything else, treating each one with the patience, love, and respect they deserve.
+                Welcome to Suds n' Wiggles, where our love for dogs is at the heart of everything we do. Founded in 2023, our journey began with a simple mission: to provide a safe, comfortable, and positive grooming experience for every dog that walks through our doors. We saw a need for a salon that prioritized pets' well-being over everything else, treating each one with the patience, love, and respect they deserve.
               </p>
               <p>
                 Our founder, Jane Doe, a certified master groomer with over 15 years of experience, built this business from the ground up. Her philosophy is that grooming is more than just a haircut—it's an essential part of a dog's health and happiness. We use only high-quality, natural products and state-of-the-art equipment to ensure your furry friend not only looks fantastic but feels great too.
               </p>
               <p>
-                At Pawsitive Image, we're not just a team; we're a family of passionate animal lovers. We can't wait to welcome you and your beloved pet into our family.
+                At Suds n' Wiggles, we're not just a team; we're a family of passionate animal lovers. We can't wait to welcome you and your beloved pet into our family.
               </p>
             </div>
           </div>

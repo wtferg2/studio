@@ -9,7 +9,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Buddy's Human",
-    text: "Pawsitive Image always does an amazing job with Buddy. He comes back looking and smelling great, and he's always happy to see the staff!",
+    text: "Suds n' Wiggles always does an amazing job with Buddy. He comes back looking and smelling great, and he's always happy to see the staff!",
     image: "https://placehold.co/400x400.png",
     aiHint: "golden retriever"
   },

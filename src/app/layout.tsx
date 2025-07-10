@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Pawsitive Image',
+  title: 'Suds n' Wiggles',
   description: 'Professional dog grooming with a gentle touch.',
 };
 

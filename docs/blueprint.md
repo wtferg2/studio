@@ -1,4 +1,4 @@
-# **App Name**: Pawsitive Image
+# **App Name**: Suds n' Wiggles
 
 ## Core Features:
 
