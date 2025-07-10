@@ -4,8 +4,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Suds n' Wiggles',
-  description: 'Get in touch with Suds n' Wiggles. Find our address, phone number, and social media links to book an appointment.',
+  title: "Contact Us | Suds n' Wiggles",
+  description: "Get in touch with Suds n' Wiggles. Find our address, phone number, and social media links to book an appointment.",
 };
 
 const contactDetails = [
