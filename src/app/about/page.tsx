@@ -3,8 +3,8 @@ import { PawPrint } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Suds n' Wiggles',
-  description: 'Learn about the story and passion behind Suds n' Wiggles dog grooming.',
+  title: "About Us | Suds n' Wiggles",
+  description: "Learn about the story and passion behind Suds n' Wiggles dog grooming.",
 };
 
 
