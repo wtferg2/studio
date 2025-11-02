@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -32,10 +32,16 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, CreditCard } from 'lucide-react';
 import { services } from '@/lib/services';
+import { useAuth, useFirestore, useUser } from '@/firebase';
+import { initiateAnonymousSignIn } from '@/firebase/non-blocking-login';
+import { doc, setDoc } from 'firebase/firestore';
+import { addDocumentNonBlocking } from '@/firebase/non-blocking-updates';
+import { collection } from 'firebase/firestore';
 
 const formSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
+  phone: z.string().min(10, { message: 'Please enter a valid phone number.' }),
   dogName: z.string().min(1, { message: "Please enter your dog's name." }),
   service: z.string({ required_error: 'Please select a service.' }),
 });
@@ -43,28 +49,85 @@ const formSchema = z.object({
 export function DepositForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const auth = useAuth();
+  const firestore = useFirestore();
+  const { user, isUserLoading } = useUser();
+
+  useEffect(() => {
+    if (!user && !isUserLoading) {
+      initiateAnonymousSignIn(auth);
+    }
+  }, [user, isUserLoading, auth]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: '',
       email: '',
+      phone: '',
       dogName: '',
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-
-    // Simulate payment processing
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsLoading(false);
-    toast({
-      title: 'Deposit Submitted!',
-      description: `Thank you, ${values.fullName}. We've received your deposit for ${values.dogName} and will be in touch shortly to confirm your appointment.`,
-    });
-    form.reset();
+    if (!user) {
+      toast({
+        variant: 'destructive',
+        title: 'Authentication Error',
+        description: 'You must be signed in to make a deposit. Please try again.',
+      });
+      setIsLoading(false);
+      // Attempt to sign in again if the user is not available.
+      initiateAnonymousSignIn(auth);
+      return;
+    }
+  
+    const [firstName, ...lastNameParts] = values.fullName.split(' ');
+    const lastName = lastNameParts.join(' ');
+  
+    try {
+      // Simulate payment processing
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+  
+      const clientRef = doc(firestore, 'clients', user.uid);
+      await setDoc(clientRef, {
+        id: user.uid,
+        firstName,
+        lastName,
+        email: values.email,
+        phone: values.phone,
+      });
+  
+      const appointmentsRef = collection(clientRef, 'appointments');
+      const appointmentId = doc(appointmentsRef).id; // Generate a new appointment ID
+      const appointmentRef = doc(appointmentsRef, appointmentId);
+      
+      await setDoc(appointmentRef, {
+        id: appointmentId,
+        clientId: user.uid,
+        appointmentDateTime: new Date().toISOString(), // Using current date as placeholder
+        serviceType: values.service,
+        petName: values.dogName,
+        depositAmount: 25.0,
+        notes: 'Initial deposit made online.',
+      });
+  
+      toast({
+        title: 'Deposit Submitted!',
+        description: `Thank you, ${values.fullName}. We've received your deposit for ${values.dogName} and will be in touch shortly to confirm your appointment.`,
+      });
+      form.reset();
+    } catch (e: any) {
+      console.error('Error submitting deposit:', e);
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: e.message || 'Could not submit your deposit. Please try again.',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -109,6 +172,23 @@ export function DepositForm() {
                 </FormItem>
               )}
             />
+             <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="tel"
+                      placeholder="e.g., (123) 456-7890"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="dogName"
@@ -126,7 +206,7 @@ export function DepositForm() {
               control={form.control}
               name="service"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="md:col-span-2">
                   <FormLabel>Service</FormLabel>
                   <Select
                     onValueChange={field.onChange}
@@ -151,13 +231,13 @@ export function DepositForm() {
             />
           </CardContent>
           <CardFooter className="flex flex-col items-stretch">
-            <Button type="submit" disabled={isLoading} className="w-full">
-              {isLoading ? (
+            <Button type="submit" disabled={isLoading || isUserLoading} className="w-full">
+              {isLoading || isUserLoading ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : (
                 <CreditCard className="mr-2 h-4 w-4" />
               )}
-              Pay $25 Deposit
+              {isUserLoading ? 'Initializing...' : 'Pay $25 Deposit'}
             </Button>
             <p className="mt-4 text-xs text-muted-foreground text-center">
               Payments are securely processed. We do not store your card
