@@ -37,6 +37,8 @@ import { initiateAnonymousSignIn } from '@/firebase/non-blocking-login';
 import { doc, setDoc } from 'firebase/firestore';
 import { addDocumentNonBlocking } from '@/firebase/non-blocking-updates';
 import { collection } from 'firebase/firestore';
+import { sendConfirmationSms } from '@/ai/flows/send-confirmation-sms';
+
 
 const formSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -117,6 +119,27 @@ export function DepositForm() {
         title: 'Deposit Submitted!',
         description: `Thank you, ${values.fullName}. We've received your deposit for ${values.dogName} and will be in touch shortly to confirm your appointment.`,
       });
+
+      // Send SMS confirmation
+      try {
+        await sendConfirmationSms({
+          to: values.phone,
+          body: `Hi ${values.fullName}, your deposit for ${values.dogName}'s grooming appointment has been received. We'll contact you shortly to confirm the date and time. - Suds n' Wiggles`,
+        });
+        toast({
+          title: 'SMS Sent!',
+          description: 'A confirmation text has been sent to your phone.',
+        });
+      } catch (smsError) {
+        // Log the error, but don't show a scary error to the user since the main action succeeded.
+        console.error('SMS sending failed:', smsError);
+        toast({
+          variant: 'destructive',
+          title: 'SMS Confirmation Failed',
+          description: 'Your deposit was received, but we couldn\'t send a text confirmation. Please check your phone number.',
+        });
+      }
+
       form.reset();
     } catch (e: any) {
       console.error('Error submitting deposit:', e);
