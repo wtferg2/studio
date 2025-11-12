@@ -1,45 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { PawPrint, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { cn } from '@/lib/utils';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/contact', label: 'Contact Us' },
-];
+import { NavLinks } from './nav-links';
 
 export function Header() {
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  const NavLinks = ({ inSheet }: { inSheet?: boolean }) => (
-    <nav className={cn(
-        'flex items-center gap-6', 
-        inSheet && 'flex-col items-start gap-8'
-    )}>
-      {navLinks.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className={cn(
-            'font-medium transition-colors hover:text-primary',
-            pathname === link.href ? 'text-primary' : 'text-muted-foreground',
-            inSheet ? 'text-lg' : 'text-sm'
-          )}
-          onClick={() => setIsOpen(false)}
-        >
-          {link.label}
-        </Link>
-      ))}
-    </nav>
-  );
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -49,7 +18,7 @@ export function Header() {
           <span className="font-bold text-lg font-headline">Suds n' Wiggles</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end md:flex">
-          <NavLinks />
+          <NavLinks onLinkClick={() => {}} />
         </div>
         <div className="flex flex-1 justify-end md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -65,7 +34,7 @@ export function Header() {
                   <PawPrint className="h-8 w-8 text-accent" />
                   <span className="font-bold text-xl font-headline">Suds n' Wiggles</span>
                 </Link>
-                <NavLinks inSheet />
+                <NavLinks inSheet onLinkClick={() => setIsOpen(false)} />
               </div>
             </SheetContent>
           </Sheet>
