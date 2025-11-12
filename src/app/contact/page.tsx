@@ -2,7 +2,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { DepositForm } from '@/components/deposit-form';
 
 export const metadata: Metadata = {
   title: "Contact Us | Suds n' Wiggles",
@@ -76,10 +75,6 @@ export default function ContactPage() {
                 ))}
             </CardContent>
         </Card>
-
-        <div className="mt-16">
-            <DepositForm />
-        </div>
         
         <div className="mt-16 text-center">
             <h2 className="text-2xl font-bold font-headline">Follow Us</h2>
