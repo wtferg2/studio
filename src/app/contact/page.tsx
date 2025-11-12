@@ -15,7 +15,7 @@ const contactDetails = [
     title: 'Our Salon',
     value: '123 Puppy Lane, Dogtown, ST 54321',
     isLink: false,
-    colorClass: 'text-primary'
+    colorClass: 'text-accent'
   },
   {
     icon: Phone,
@@ -23,7 +23,7 @@ const contactDetails = [
     value: '(123) 456-7890',
     href: 'tel:+1-123-456-7890',
     isLink: true,
-    colorClass: 'text-primary'
+    colorClass: 'text-accent'
   },
   {
     icon: Mail,
