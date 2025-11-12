@@ -9,19 +9,19 @@ const testimonials = [
   {
     name: "Maddie",
     text: "I'm so happy with how my two pups look after their groom! Sam and her team are friendly and treat my goobers like family. My babies can be a hand full (cocker spaniels) but Sam got the job done! One summer cut for my boy and a clean up for my girl. Now they smell good and feel good for these hot summer days/nights.",
-    image: "https://picsum.photos/seed/101/400/400",
+    image: "https://picsum.photos/seed/102/400/400",
     aiHint: "cocker spaniels"
   },
   {
     name: "Luna's Mom",
     text: "The best groomers in town! They are so patient and caring with my anxious poodle. The AI style suggestion was surprisingly accurate and helpful!",
-    image: "https://placehold.co/400x400.png",
+    image: "https://picsum.photos/seed/103/400/400",
     aiHint: "white poodle"
   },
   {
     name: "Max's Dad",
     text: "I wouldn't trust anyone else with my scruffy terrier mix. They work wonders and the price is very reasonable. Highly recommend!",
-    image: "https://placehold.co/400x400.png",
+    image: "https://picsum.photos/seed/104/400/400",
     aiHint: "terrier mix"
   },
 ];
@@ -31,7 +31,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative w-full h-[60vh] min-h-[400px]">
         <Image
-          src="https://placehold.co/1600x900.png"
+          src="https://picsum.photos/seed/10/1600/900"
           alt="A happy, well-groomed dog"
           data-ai-hint="happy dog"
           fill
