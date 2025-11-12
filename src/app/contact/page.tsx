@@ -20,8 +20,8 @@ const contactDetails = [
   {
     icon: Phone,
     title: 'Call Us',
-    value: '(123) 456-7890',
-    href: 'tel:+1-123-456-7890',
+    value: '(562) 306-0735',
+    href: 'tel:+1-562-306-0735',
     isLink: true,
     colorClass: 'text-accent'
   },
