@@ -1,6 +1,7 @@
+
 export type DogSize = 'small' | 'medium' | 'large' | 'extra-large';
 
-export type ServiceId = 'basic-bath' | 'full-groom' | 'puppy-package' | 'deluxe-spa';
+export type ServiceId = 'haircut' | 'bath-tidy' | 'bath-brush';
 
 export const services: {
   id: ServiceId;
@@ -9,8 +10,33 @@ export const services: {
   includes: string[];
 }[] = [
   {
-    id: 'basic-bath',
-    name: 'Basic Bath & Brush',
+    id: 'haircut',
+    name: 'Haircut',
+    description:
+      'The complete grooming experience. Includes a bath, a stylish haircut, and all the essential extras to have your pup looking and feeling their best.',
+    includes: [
+      'Premium shampoo & conditioner',
+      'Fluff dry & brush-out',
+      'Styled haircut to your preference',
+      'Nail trimming',
+      'Ear cleaning',
+      'Sanitary trim',
+    ],
+  },
+  {
+    id: 'bath-tidy',
+    name: 'Bath & Tidy',
+    description:
+      "A great in-between groom option. Includes a refreshing bath and a light trim of the face, paws, and sanitary areas.",
+    includes: [
+      'All Basic Bath & Brush services',
+      'Light trim around face and paws',
+      'Sanitary trim',
+    ],
+  },
+  {
+    id: 'bath-brush',
+    name: 'Bath & Brush',
     description:
       'A refreshing bath and brush-out to keep your dog clean and happy between full grooms.',
     includes: [
@@ -20,41 +46,6 @@ export const services: {
       'Ear cleaning',
     ],
   },
-  {
-    id: 'full-groom',
-    name: 'Full Service Groom',
-    description:
-      'The complete spa experience. Includes a bath, haircut, and all the essential extras.',
-    includes: [
-      'All Basic Bath services',
-      'Styled haircut to your preference',
-      'Sanitary trim',
-      'Paw pad trim',
-    ],
-  },
-  {
-    id: 'puppy-package',
-    name: "Puppy's First Groom",
-    description:
-      "A gentle introduction to grooming for your new family member (for puppies under 6 months).",
-    includes: [
-      'Gentle bath & low-heat dry',
-      'Light trim around face, paws, and sanitary area',
-      'Nail trimming',
-      'Lots of positive reinforcement!',
-    ],
-  },
-   {
-    id: 'deluxe-spa',
-    name: 'Deluxe Spa Package',
-    description: 'The ultimate pampering session for when your dog deserves some extra love.',
-    includes: [
-        'All Full Service Groom features',
-        'De-shedding treatment or deep-conditioning mask',
-        'Teeth brushing & breath freshener',
-        'Paw balm treatment',
-    ]
-   }
 ];
 
 export const dogSizes: { id: DogSize; label: string; weight: string }[] = [
@@ -66,27 +57,23 @@ export const dogSizes: { id: DogSize; label: string; weight: string }[] = [
 
 export const servicePrices: Record<DogSize, Record<ServiceId, number>> = {
     small: {
-        'basic-bath': 45,
-        'full-groom': 75,
-        'puppy-package': 35,
-        'deluxe-spa': 95,
+        'haircut': 65,
+        'bath-tidy': 55,
+        'bath-brush': 50,
     },
     medium: {
-        'basic-bath': 55,
-        'full-groom': 85,
-        'puppy-package': 35,
-        'deluxe-spa': 105,
+        'haircut': 75,
+        'bath-tidy': 65,
+        'bath-brush': 55,
     },
     large: {
-        'basic-bath': 65,
-        'full-groom': 95,
-        'puppy-package': 35,
-        'deluxe-spa': 115,
+        'haircut': 95,
+        'bath-tidy': 80,
+        'bath-brush': 65,
     },
     'extra-large': {
-        'basic-bath': 75,
-        'full-groom': 105,
-        'puppy-package': 35,
-        'deluxe-spa': 125,
+        'haircut': 115,
+        'bath-tidy': 100,
+        'bath-brush': 90,
     },
 };
