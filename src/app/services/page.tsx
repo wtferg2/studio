@@ -52,7 +52,6 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service) => {
               const price = servicePrices[selectedSize][service.id] ?? 'N/A';
-              const isPuppyPackage = service.id === 'puppy-package';
               
               return (
               <Card key={service.id} className="flex flex-col">
@@ -61,7 +60,7 @@ export default function ServicesPage() {
                     {service.name}
                   </CardTitle>
                   <CardDescription className="text-xl font-bold">
-                    {isPuppyPackage ? `$${price}` : `Starting at $${price}`}
+                    {`Starting at $${price}`}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow space-y-4">
@@ -76,13 +75,15 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  {isPuppyPackage && (
-                      <p className="text-sm text-muted-foreground pt-4">* Price is the same for all puppy sizes.</p>
-                  )}
                 </CardContent>
               </Card>
             )})}
           </div>
+
+          <p className="text-sm text-muted-foreground mt-4 text-center">
+            * Please note that prices are estimates and may vary based on coat condition, temperament, and specific needs.
+          </p>
+
 
           <Separator className="my-12 md:my-16" />
 
