@@ -79,13 +79,14 @@ export default function ServicesPage() {
                       <p className="text-sm text-muted-foreground pt-4">* Price is the same for all puppy sizes.</p>
                   )}
                 </CardContent>
-                <CardContent>
-                   <Button asChild className="w-full">
-                        <Link href="/contact">Book Now</Link>
-                    </Button>
-                </CardContent>
               </Card>
             )})}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button asChild size="lg">
+              <Link href="/contact">Book an Appointment</Link>
+            </Button>
           </div>
 
           <Alert className="mt-12">
