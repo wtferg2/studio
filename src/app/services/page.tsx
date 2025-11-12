@@ -9,12 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { services, servicePrices, dogSizes, type DogSize } from '@/lib/services';
-import { CheckCircle, Clock } from 'lucide-react';
+import { services, servicePrices, dogSizes, type DogSize, additionalServices } from '@/lib/services';
+import { CheckCircle, Clock, PawPrint } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Separator } from '@/components/ui/separator';
 
 export default function ServicesPage() {
   const [selectedSize, setSelectedSize] = useState<DogSize>('small');
@@ -83,7 +84,42 @@ export default function ServicesPage() {
             )})}
           </div>
 
-          <div className="mt-12 text-center">
+          <Separator className="my-12 md:my-16" />
+
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">A La Carte Services</h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+                Enhance your pet's spa day with our add-on services.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {additionalServices.map((category) => (
+              <Card key={category.id} className="flex flex-col">
+                <CardHeader className="flex-row items-center gap-4 space-y-0">
+                  <div className="inline-block rounded-full bg-accent/10 p-3">
+                    <PawPrint className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="font-headline text-2xl text-accent leading-tight">
+                    {category.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {category.services.map((service, index) => (
+                      <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0">
+                        <span className="text-muted-foreground">{service.name}</span>
+                        <span className="font-semibold">${service.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+
+          <div className="mt-16 text-center">
             <Button asChild size="lg">
               <Link href="/contact">Book an Appointment</Link>
             </Button>
