@@ -13,16 +13,16 @@ const testimonials = [
     aiHint: "cocker spaniels"
   },
   {
-    name: "Luna's Mom",
-    text: "The best groomers in town! They are so patient and caring with my anxious poodle. The AI style suggestion was surprisingly accurate and helpful!",
-    image: "https://picsum.photos/seed/103/400/400",
-    aiHint: "white poodle"
+    name: "Hannah",
+    text: "Our dog, Wheaties, LOVES Sam and the rest of the team. They are super sweet to him and are always sending me little updates so I'm never concerned. Thrilled and relieved such nice people took over the salon",
+    image: "https://picsum.photos/seed/105/400/400",
+    aiHint: "golden retriever"
   },
   {
-    name: "Max's Dad",
-    text: "I wouldn't trust anyone else with my scruffy terrier mix. They work wonders and the price is very reasonable. Highly recommend!",
-    image: "https://picsum.photos/seed/104/400/400",
-    aiHint: "terrier mix"
+    name: "Dana",
+    text: "Samantha is truly the \"Pup Whisperer\"! Sam truly cares for my fur baby, she is so kind to all of the dogs in her care, she takes the time to build a relationship with our dog, which is important because it creates trust, not just between she and I, but for my pup as well. Stormy loves going to 'Suds N Wiggles'. Sam is a master at cutting and styling my girl! Stormy always leaves Sam with extra pep in her step! 'Suds N Wiggles' offers grooming AND daycare, I feel safe leaving Stormy in Sam's care! Thank you 'Suds N Wiggles'!",
+    image: "https://picsum.photos/seed/106/400/400",
+    aiHint: "happy puppy"
   },
 ];
 
