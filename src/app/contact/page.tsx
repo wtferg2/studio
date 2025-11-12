@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
@@ -14,6 +15,7 @@ const contactDetails = [
     title: 'Our Salon',
     value: '123 Puppy Lane, Dogtown, ST 54321',
     isLink: false,
+    colorClass: 'text-primary'
   },
   {
     icon: Phone,
@@ -21,6 +23,7 @@ const contactDetails = [
     value: '(123) 456-7890',
     href: 'tel:+1-123-456-7890',
     isLink: true,
+    colorClass: 'text-primary'
   },
   {
     icon: Mail,
@@ -28,6 +31,7 @@ const contactDetails = [
     value: 'hello@pawsitiveimage.com',
     href: 'mailto:hello@pawsitiveimage.com',
     isLink: true,
+    colorClass: 'text-accent'
   }
 ];
 
@@ -60,8 +64,8 @@ export default function ContactPage() {
             <CardContent className="p-8 grid md:grid-cols-3 gap-8">
                 {contactDetails.map((item) => (
                     <div key={item.title} className="flex flex-col items-center text-center">
-                        <div className="mb-4 rounded-full bg-primary/10 p-4">
-                            <item.icon className="h-8 w-8 text-primary" />
+                        <div className={`mb-4 rounded-full ${item.colorClass === 'text-primary' ? 'bg-primary/10' : 'bg-accent/10'} p-4`}>
+                            <item.icon className={`h-8 w-8 ${item.colorClass}`} />
                         </div>
                         <h3 className="font-semibold text-lg">{item.title}</h3>
                         {item.isLink ? (
