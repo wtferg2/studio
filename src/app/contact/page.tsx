@@ -13,7 +13,7 @@ const contactDetails = [
   {
     icon: MapPin,
     title: 'Our Salon',
-    value: '123 Puppy Lane, Dogtown, ST 54321',
+    value: '10052 Rosecrans Ave Bellflower, CA 90706',
     isLink: false,
     colorClass: 'text-accent'
   },
