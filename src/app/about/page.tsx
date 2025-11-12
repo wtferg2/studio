@@ -24,8 +24,8 @@ export default function AboutPage() {
             />
           </div>
           <div className="space-y-6 animate-fade-in-right">
-            <div className="inline-block rounded-full bg-primary/10 p-3">
-              <PawPrint className="h-8 w-8 text-primary" />
+            <div className="inline-block rounded-full bg-accent/10 p-3">
+              <PawPrint className="h-8 w-8 text-accent" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-headline">Our Story</h1>
             <div className="space-y-4 text-lg text-muted-foreground">
