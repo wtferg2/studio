@@ -34,9 +34,7 @@ import { Loader2, CreditCard } from 'lucide-react';
 import { services } from '@/lib/services';
 import { useAuth, useFirestore, useUser } from '@/firebase';
 import { initiateAnonymousSignIn } from '@/firebase/non-blocking-login';
-import { doc, setDoc } from 'firebase/firestore';
-import { addDocumentNonBlocking } from '@/firebase/non-blocking-updates';
-import { collection } from 'firebase/firestore';
+import { doc, setDoc, collection } from 'firebase/firestore';
 import { sendConfirmationSms } from '@/ai/flows/send-confirmation-sms';
 
 
