@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Maddie",
     text: "I'm so happy with how my two pups look after their groom! Sam and her team are friendly and treat my goobers like family. My babies can be a hand full (cocker spaniels) but Sam got the job done! One summer cut for my boy and a clean up for my girl. Now they smell good and feel good for these hot summer days/nights.",
-    image: "https://picsum.photos/seed/102/400/400",
+    image: "/maddie-testimonial.jpg",
     aiHint: "cocker spaniels"
   },
   {
