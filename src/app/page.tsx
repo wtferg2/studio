@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import Link from "next/link";
-import { StyleSuggester } from "@/components/style-suggester";
 import { Quote } from "lucide-react";
 
 const testimonials = [
@@ -50,12 +49,6 @@ export default function Home() {
           <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground animate-fade-in [animation-delay:0.4s]">
             <Link href="/contact">Book an Appointment</Link>
           </Button>
-        </div>
-      </section>
-
-      <section id="style-suggester" className="w-full py-12 md:py-24 bg-background">
-        <div className="container">
-          <StyleSuggester />
         </div>
       </section>
 
