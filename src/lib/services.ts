@@ -1,7 +1,7 @@
 
 export type DogSize = 'small' | 'medium' | 'large' | 'extra-large';
 
-export type ServiceId = 'haircut' | 'bath-tidy' | 'bath-brush';
+export type ServiceId = 'haircut' | 'bath-tidy' | 'bath-brush' | 'puppy-package';
 
 export const services: {
   id: ServiceId;
@@ -13,14 +13,14 @@ export const services: {
     id: 'haircut',
     name: 'Haircut',
     description:
-      'The complete grooming experience. Includes a bath, a stylish haircut, and all the essential extras to have your pup looking and feeling their best.',
+      'Length off the body. The complete grooming experience to have your pup looking and feeling their best.',
     includes: [
-      'Premium shampoo & conditioner',
-      'Fluff dry & brush-out',
-      'Styled haircut to your preference',
+      'Bath with premium shampoo & conditioner',
+      'Blow-dry & brush out',
       'Nail trimming',
       'Ear cleaning',
-      'Sanitary trim',
+      'Anal gland expression',
+      'Puppy cuddles',
     ],
   },
   {
@@ -29,9 +29,12 @@ export const services: {
     description:
       "A great in-between groom option. Includes a refreshing bath and a light trim of the face, paws, and sanitary areas.",
     includes: [
-      'All Basic Bath & Brush services',
-      'Light trim around face and paws',
-      'Sanitary trim',
+        'Bath with premium shampoo & conditioner',
+        'Blow-dry & brush out',
+        'Nail trimming',
+        'Ear cleaning',
+        'Anal gland expression',
+        'Puppy cuddles',
     ],
   },
   {
@@ -40,10 +43,12 @@ export const services: {
     description:
       'A refreshing bath and brush-out to keep your dog clean and happy between full grooms.',
     includes: [
-      'Premium shampoo & conditioner',
-      'Fluff dry & brush-out',
-      'Nail trimming',
-      'Ear cleaning',
+        'Bath with premium shampoo & conditioner',
+        'Blow-dry & brush out',
+        'Nail trimming',
+        'Ear cleaning',
+        'Anal gland expression',
+        'Puppy cuddles',
     ],
   },
 ];
@@ -55,7 +60,7 @@ export const dogSizes: { id: DogSize; label: string; weight: string }[] = [
     { id: 'extra-large', label: 'Extra Large', weight: '75+ lbs' },
 ];
 
-export const servicePrices: Record<DogSize, Record<ServiceId, number>> = {
+export const servicePrices: Record<DogSize, Partial<Record<ServiceId, number>>> = {
     small: {
         'haircut': 65,
         'bath-tidy': 55,

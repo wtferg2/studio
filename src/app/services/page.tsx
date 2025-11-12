@@ -10,10 +10,11 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { services, servicePrices, dogSizes, type DogSize } from '@/lib/services';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 export default function ServicesPage() {
   const [selectedSize, setSelectedSize] = useState<DogSize>('small');
@@ -55,7 +56,7 @@ export default function ServicesPage() {
               return (
               <Card key={service.id} className="flex flex-col">
                 <CardHeader>
-                  <CardTitle className="font-headline text-2xl text-primary">
+                  <CardTitle className="font-headline text-2xl text-accent">
                     {service.name}
                   </CardTitle>
                   <CardDescription className="text-xl font-bold">
@@ -86,6 +87,14 @@ export default function ServicesPage() {
               </Card>
             )})}
           </div>
+
+          <Alert className="mt-12">
+            <Clock className="h-4 w-4" />
+            <AlertTitle>Grooming Duration</AlertTitle>
+            <AlertDescription>
+              Please allow 4 hours for completion of grooming services; we will reach out if completed sooner.
+            </AlertDescription>
+          </Alert>
         </div>
       </div>
     </div>
