@@ -1,3 +1,7 @@
+
+'use client';
+
+import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -5,19 +9,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { services } from '@/lib/services';
+import { services, servicePrices, dogSizes, type DogSize } from '@/lib/services';
 import { CheckCircle } from 'lucide-react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-export const metadata: Metadata = {
-  title: "Our Services | Suds n' Wiggles",
-  description:
-    'Explore our professional dog grooming services, from basic baths to full-service grooms.',
-};
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function ServicesPage() {
+  const [selectedSize, setSelectedSize] = useState<DogSize>('small');
+
   return (
     <div className="bg-background">
       <div className="container py-12 md:py-24 animate-fade-in">
@@ -27,19 +27,39 @@ export default function ServicesPage() {
               Our Grooming Services
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Pamper your pup with our range of professional grooming packages.
+              Pamper your pup with our range of professional grooming packages. Prices vary by dog size.
             </p>
           </div>
 
+          <div className="mb-8 max-w-xs mx-auto">
+            <h3 className="text-lg font-medium text-center mb-2">Select Your Dog's Size</h3>
+            <Select onValueChange={(value) => setSelectedSize(value as DogSize)} defaultValue={selectedSize}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select dog size" />
+              </SelectTrigger>
+              <SelectContent>
+                {dogSizes.map((size) => (
+                  <SelectItem key={size.id} value={size.id}>
+                    {size.label} ({size.weight})
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service) => (
+            {services.map((service) => {
+              const price = servicePrices[selectedSize][service.id] ?? 'N/A';
+              const isPuppyPackage = service.id === 'puppy-package';
+              
+              return (
               <Card key={service.id} className="flex flex-col">
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl text-primary">
                     {service.name}
                   </CardTitle>
                   <CardDescription className="text-xl font-bold">
-                    Starting at ${service.price}
+                    {isPuppyPackage ? `$${price}` : `Starting at $${price}`}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow space-y-4">
@@ -54,6 +74,9 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {isPuppyPackage && (
+                      <p className="text-sm text-muted-foreground pt-4">* Price is the same for all puppy sizes.</p>
+                  )}
                 </CardContent>
                 <CardContent>
                    <Button asChild className="w-full">
@@ -61,7 +84,7 @@ export default function ServicesPage() {
                     </Button>
                 </CardContent>
               </Card>
-            ))}
+            )})}
           </div>
         </div>
       </div>
