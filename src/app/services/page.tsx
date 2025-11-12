@@ -22,7 +22,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-background">
       <div className="container py-12 md:py-24 animate-fade-in">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold font-headline">
               Our Grooming Services
@@ -48,7 +48,7 @@ export default function ServicesPage() {
             </Select>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service) => {
               const price = servicePrices[selectedSize][service.id] ?? 'N/A';
               const isPuppyPackage = service.id === 'puppy-package';
