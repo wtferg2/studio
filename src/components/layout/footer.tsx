@@ -19,7 +19,7 @@ export function Footer() {
             <Link href="#" aria-label="Instagram page">
                 <Instagram className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
-            <Link href="mailto:hello@pawsitiveimage.com" aria-label="Email us">
+            <Link href="mailto:Sudsnwiggles@gmail.com" aria-label="Email us">
                 <Mail className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
         </div>

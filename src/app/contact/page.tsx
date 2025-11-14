@@ -28,8 +28,8 @@ const contactDetails = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'hello@pawsitiveimage.com',
-    href: 'mailto:hello@pawsitiveimage.com',
+    value: 'Sudsnwiggles@gmail.com',
+    href: 'mailto:Sudsnwiggles@gmail.com',
     isLink: true,
     colorClass: 'text-accent'
   }
