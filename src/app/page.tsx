@@ -4,6 +4,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from "next/image";
 import Link from "next/link";
 import { Quote } from "lucide-react";
+import * as Banner from "../images/SUDS n WIGGLES petgrooming Blue i  transparent background.png"
+
 
 const testimonials = [
   {
@@ -31,7 +33,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative w-full h-[60vh] min-h-[400px]">
         <Image
-          src="https://picsum.photos/seed/10/1600/900"
+          src={Banner}
           alt="A happy, well-groomed dog"
           data-ai-hint="happy dog"
           fill
