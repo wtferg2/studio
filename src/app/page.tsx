@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -30,7 +31,7 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full h-[60vh] min-h-[400px]">
+      <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px]">
         <Image
           src={Banner}
           alt="A happy, well-groomed dog"
