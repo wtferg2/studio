@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from "next/image";
 import Link from "next/link";
 import { Quote } from "lucide-react";
-import * as Banner from "../images/16x9_SUDS n WIGGLES petgrooming Blue i transparent background.png"
+import * as Banner from "../images/16xSUDS n WIGGLES petgrooming Blue i transparent background.png"
 
 const testimonials = [
   {
