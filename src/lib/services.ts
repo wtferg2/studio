@@ -94,6 +94,22 @@ export type AddonCategory = {
   services: AddonService[];
 };
 
+export const appointmentAddonsList: AddonService[] = [
+  { name: 'Teeth Brushing', price: '10' },
+  { name: 'Flea Shampoo', price: '15' },
+  { name: 'Flea Pill', price: '20' },
+  { name: 'Deshed', price: '1/min'},
+  { name: 'Demat', price: '1/min'},
+  { name: 'Shave Down', price: '10-20'},
+  { name: 'Express Groom', price: '20' },
+  { name: 'Special Handling', price: '15+' },
+];
+
+export const cancellationPolicy: AddonService[] = [
+    { name: 'No Call / No Show', price: '25' },
+];
+
+
 export const additionalServices: AddonCategory[] = [
   {
     id: 'creative-grooming',
@@ -128,15 +144,8 @@ export const additionalServices: AddonCategory[] = [
     id: 'add-ons',
     title: 'Appointment Add-Ons',
     services: [
-      { name: 'Teeth Brushing', price: '10' },
-      { name: 'Flea Shampoo', price: '15' },
-      { name: 'Flea Pill', price: '20' },
-      { name: 'Deshed', price: '1/min'},
-      { name: 'Demat', price: '1/min'},
-      { name: 'Shave Down', price: '10-20'},
-      { name: 'Express Groom', price: '20' },
-      { name: 'Special Handling', price: '15+' },
-      { name: 'No Call / No Show', price: '25' },
+      ...appointmentAddonsList,
+      ...cancellationPolicy,
     ],
   },
 ];

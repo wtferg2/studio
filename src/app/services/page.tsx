@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { services, servicePrices, dogSizes, type DogSize, additionalServices } from '@/lib/services';
+import { services, servicePrices, dogSizes, type DogSize, additionalServices, appointmentAddonsList, cancellationPolicy } from '@/lib/services';
 import { CheckCircle, Clock, PawPrint } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -109,14 +109,39 @@ export default function ServicesPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3 columns-1 sm:columns-2 md:columns-3">
-                    {appointmentAddons.services.map((service, index) => (
-                      <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
-                        <span className="text-muted-foreground">{service.name}</span>
-                        <span className="font-semibold">${service.price}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
+                    <ul className="space-y-3">
+                      {appointmentAddonsList.slice(0, 3).map((service, index) => (
+                        <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
+                          <span className="text-muted-foreground">{service.name}</span>
+                          <span className="font-semibold">${service.price}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="space-y-3">
+                      {appointmentAddonsList.slice(3, 6).map((service, index) => (
+                        <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
+                          <span className="text-muted-foreground">{service.name}</span>
+                          <span className="font-semibold">{service.price.includes('min') ? `$${service.price}` : `$${service.price}`}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="space-y-3">
+                      {appointmentAddonsList.slice(6).map((service, index) => (
+                        <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
+                          <span className="text-muted-foreground">{service.name}</span>
+                          <span className="font-semibold">${service.price}</span>
+                        </li>
+                      ))}
+                       {cancellationPolicy.length > 0 && <Separator className="my-3" />}
+                       {cancellationPolicy.map((service, index) => (
+                        <li key={index} className="flex justify-between items-center break-inside-avoid pt-3">
+                          <span className="text-muted-foreground">{service.name}</span>
+                          <span className="font-semibold">${service.price}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </CardContent>
               </Card>
             )}
