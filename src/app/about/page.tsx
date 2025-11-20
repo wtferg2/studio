@@ -22,7 +22,7 @@ export default function AboutPage() {
               data-ai-hint="dog grooming salon"
               width={800}
               height={1000}
-              className="rounded-lg shadow-lg object-cover w-full h-full max-h-[600px]"
+              className="rounded-lg shadow-lg object-contain w-full h-full"
             />
           </div>
           <div className="space-y-6 animate-fade-in-right">
