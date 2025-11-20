@@ -46,13 +46,13 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full text-center text-white p-4 pb-8 md:pb-12">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline drop-shadow-lg animate-fade-in">
+          <h1 className="text-2xl md:text-3xl font-bold font-headline drop-shadow-lg animate-fade-in">
             Where Every Pet is a Work of Art
           </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl drop-shadow-md animate-fade-in [animation-delay:0.2s]">
+          <p className="mt-2 max-w-lg text-sm md:text-base drop-shadow-md animate-fade-in [animation-delay:0.2s]">
             Expert grooming with a gentle touch. We believe a positive experience is just as important as a perfect haircut.
           </p>
-          <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground animate-fade-in [animation-delay:0.4s]">
+          <Button asChild size="default" className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground animate-fade-in [animation-delay:0.4s]">
             <Link href="/contact">Book an Appointment</Link>
           </Button>
         </div>
