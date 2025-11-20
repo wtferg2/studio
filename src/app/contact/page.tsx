@@ -53,8 +53,8 @@ export default function ContactPage() {
         </div>
 
         <div className="flex flex-col items-center gap-12">
-            <Card className="w-full max-w-lg">
-                <CardContent className="p-8 grid grid-cols-1 gap-8">
+            <Card className="w-full">
+                <CardContent className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                     {contactDetails.map((item) => (
                         <div key={item.title} className="flex flex-col items-center text-center">
                             <div className={`mb-4 rounded-full ${item.colorClass === 'text-primary' ? 'bg-primary/10' : 'bg-accent/10'} p-4`}>
