@@ -35,13 +35,12 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section style={{backgroundColor: "e5e7eb"}} className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px]">
+      <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px] bg-secondary">
         <Image
           src={Banner}
           alt="A happy, well-groomed dog"
           data-ai-hint="happy dog"
           fill
-          style={{backgroundColor: "e5e7eb"}}
           className="object-cover"
           priority
         />
