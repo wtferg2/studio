@@ -45,7 +45,7 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex flex-col items-center justify-end pb-16 md:pb-24 h-full text-center text-white p-4">
+        <div className="relative z-10 flex flex-col items-center justify-end pb-20 md:pb-28 h-full text-center text-white p-4">
           <h1 className="text-4xl md:text-6xl font-bold font-headline drop-shadow-lg animate-fade-in">
             Where Every Pet is a Work of Art
           </h1>
