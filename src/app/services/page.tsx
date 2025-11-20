@@ -56,7 +56,7 @@ export default function ServicesPage() {
               return (
               <Card key={service.id} className="flex flex-col">
                 <CardHeader>
-                  <CardTitle className="font-headline text-2xl text-accent">
+                  <CardTitle className="font-headline text-2xl text-primary">
                     {service.name}
                   </CardTitle>
                   <CardDescription className="text-xl font-bold">
@@ -98,10 +98,10 @@ export default function ServicesPage() {
             {additionalServices.map((category) => (
               <Card key={category.id} className="flex flex-col">
                 <CardHeader className="flex-row items-center gap-4 space-y-0">
-                  <div className="inline-block rounded-full bg-accent/10 p-3">
-                    <PawPrint className="h-6 w-6 text-accent" />
+                  <div className="inline-block rounded-full bg-primary/10 p-3">
+                    <PawPrint className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="font-headline text-2xl text-accent leading-tight">
+                  <CardTitle className="font-headline text-2xl text-primary leading-tight">
                     {category.title}
                   </CardTitle>
                 </CardHeader>

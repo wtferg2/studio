@@ -77,7 +77,7 @@ export default function Home() {
                   <div className="p-1 h-full">
                     <Card className="h-full flex flex-col">
                       <CardHeader className="flex-row items-start bg-muted/50">
-                        <Quote className="w-8 h-8 text-accent mr-4" />
+                        <Quote className="w-8 h-8 text-primary mr-4" />
                         <div>
                             <CardTitle className="text-lg">{testimonial.name}</CardTitle>
                         </div>
