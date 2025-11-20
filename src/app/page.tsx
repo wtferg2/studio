@@ -46,7 +46,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="w-full bg-secondary py-12 md:py-16">
+      <section className="w-full bg-primary/20 py-12 md:py-16">
         <div className="container flex flex-col items-center text-center">
             <h1 className="text-2xl md:text-4xl font-bold font-headline text-foreground animate-fade-in">
                 Where Every Pet is a Work of Art
