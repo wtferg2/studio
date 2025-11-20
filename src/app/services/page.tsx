@@ -19,6 +19,9 @@ import { Separator } from '@/components/ui/separator';
 
 export default function ServicesPage() {
   const [selectedSize, setSelectedSize] = useState<DogSize>('small');
+  const appointmentAddons = additionalServices.find(category => category.id === 'add-ons');
+  const otherAddons = additionalServices.filter(category => category.id !== 'add-ons');
+
 
   return (
     <div className="bg-background">
@@ -95,20 +98,20 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {additionalServices.map((category) => (
-              <Card key={category.id} className="flex flex-col">
+            {appointmentAddons && (
+              <Card key={appointmentAddons.id} className="md:col-span-2 flex flex-col">
                 <CardHeader className="flex-row items-center gap-4 space-y-0">
                   <div className="inline-block rounded-full bg-primary/10 p-3">
                     <PawPrint className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="font-headline text-2xl text-primary leading-tight">
-                    {category.title}
+                    {appointmentAddons.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
-                    {category.services.map((service, index) => (
-                      <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0">
+                  <ul className="space-y-3 columns-1 sm:columns-2">
+                    {appointmentAddons.services.map((service, index) => (
+                      <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
                         <span className="text-muted-foreground">{service.name}</span>
                         <span className="font-semibold">${service.price}</span>
                       </li>
@@ -116,9 +119,55 @@ export default function ServicesPage() {
                   </ul>
                 </CardContent>
               </Card>
+            )}
+             {otherAddons.filter(c => c.id === 'walk-ins').map((category) => (
+                <Card key={category.id} className="flex flex-col">
+                    <CardHeader className="flex-row items-center gap-4 space-y-0">
+                    <div className="inline-block rounded-full bg-primary/10 p-3">
+                        <PawPrint className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="font-headline text-2xl text-primary leading-tight">
+                        {category.title}
+                    </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <ul className="space-y-3">
+                        {category.services.map((service, index) => (
+                        <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0">
+                            <span className="text-muted-foreground">{service.name}</span>
+                            <span className="font-semibold">${service.price}</span>
+                        </li>
+                        ))}
+                    </ul>
+                    </CardContent>
+                </Card>
             ))}
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            {otherAddons.filter(c => c.id !== 'walk-ins').map((category) => (
+                <Card key={category.id} className="flex flex-col">
+                    <CardHeader className="flex-row items-center gap-4 space-y-0">
+                    <div className="inline-block rounded-full bg-primary/10 p-3">
+                        <PawPrint className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="font-headline text-2xl text-primary leading-tight">
+                        {category.title}
+                    </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <ul className="space-y-3">
+                        {category.services.map((service, index) => (
+                        <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0">
+                            <span className="text-muted-foreground">{service.name}</span>
+                            <span className="font-semibold">${service.price}</span>
+                        </li>
+                        ))}
+                    </ul>
+                    </CardContent>
+                </Card>
+            ))}
+          </div>
 
           <div className="mt-16 text-center">
             <Button asChild size="lg">
