@@ -135,6 +135,8 @@ export const additionalServices: AddonCategory[] = [
       { name: 'Demat', price: '1/min'},
       { name: 'Shave Down', price: '10-20'},
       { name: 'Express Groom', price: '20' },
+      { name: 'Special Handling', price: '15+' },
+      { name: 'No Call / No Show', price: '25' },
     ],
   },
 ];
