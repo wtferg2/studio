@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { services, servicePrices, dogSizes, type DogSize, additionalServices, appointmentAddonsList, cancellationPolicy } from '@/lib/services';
+import { services, servicePrices, dogSizes, type DogSize, additionalServices, appointmentAddonsList } from '@/lib/services';
 import { CheckCircle, Clock, PawPrint } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -129,13 +129,6 @@ export default function ServicesPage() {
                     <ul className="space-y-3">
                       {appointmentAddonsList.slice(6).map((service, index) => (
                         <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
-                          <span className="text-muted-foreground">{service.name}</span>
-                          <span className="font-semibold">${service.price}</span>
-                        </li>
-                      ))}
-                       {cancellationPolicy.length > 0 && <Separator className="my-3" />}
-                       {cancellationPolicy.map((service, index) => (
-                        <li key={index} className="flex justify-between items-center break-inside-avoid pt-3">
                           <span className="text-muted-foreground">{service.name}</span>
                           <span className="font-semibold">${service.price}</span>
                         </li>
