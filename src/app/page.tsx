@@ -35,7 +35,7 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px] bg-secondary">
+      <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px]">
         <Image
           src={Banner}
           alt="A happy, well-groomed dog"
@@ -44,21 +44,23 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex flex-col items-center justify-end h-full text-center text-white p-4 pb-12 md:pb-16">
-          <h1 className="text-xl md:text-2xl font-bold font-headline drop-shadow-lg animate-fade-in">
-            Where Every Pet is a Work of Art
-          </h1>
-          <p className="mt-2 max-w-lg text-xs md:text-sm drop-shadow-md animate-fade-in [animation-delay:0.2s]">
-            Expert grooming with a gentle touch. We believe a positive experience is just as important as a perfect haircut.
-          </p>
-          <Button asChild size="sm" className="mt-3 bg-primary hover:bg-primary/90 text-primary-foreground animate-fade-in [animation-delay:0.4s]">
-            <Link href="/contact">Book an Appointment</Link>
-          </Button>
+      </section>
+
+      <section className="w-full bg-secondary py-12 md:py-16">
+        <div className="container flex flex-col items-center text-center">
+            <h1 className="text-2xl md:text-4xl font-bold font-headline text-foreground animate-fade-in">
+                Where Every Pet is a Work of Art
+            </h1>
+            <p className="mt-3 max-w-2xl text-md md:text-lg text-muted-foreground animate-fade-in [animation-delay:0.2s]">
+                Expert grooming with a gentle touch. We believe a positive experience is just as important as a perfect haircut.
+            </p>
+            <Button asChild size="lg" className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground animate-fade-in [animation-delay:0.4s]">
+                <Link href="/contact">Book an Appointment</Link>
+            </Button>
         </div>
       </section>
 
-      <section id="testimonials" className="w-full py-12 md:py-24 bg-secondary">
+      <section id="testimonials" className="w-full py-12 md:py-24 bg-background">
         <div className="container">
           <h2 className="text-3xl font-bold text-center font-headline mb-2">Happy Pups, Happy Parents</h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">See what our clients are barking about. Your pet's happiness is our greatest reward.</p>
