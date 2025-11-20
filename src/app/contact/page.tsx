@@ -39,8 +39,8 @@ const socialLinks = [
     {
       icon: Instagram,
       label: 'Instagram',
-      handle: '@pawsitiveimage',
-      href: '#',
+      handle: '@sudsnwigglespetgrooming',
+      href: 'https://www.instagram.com/sudsnwigglespetgrooming/',
     },
     {
       icon: Facebook,
@@ -85,7 +85,7 @@ export default function ContactPage() {
             <p className="mt-2 text-muted-foreground">See our latest transformations and happy clients on social media!</p>
             <div className="mt-6 flex justify-center gap-8">
                 {socialLinks.map(social => (
-                     <Link key={social.label} href={social.href} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200">
+                     <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200">
                          <social.icon className="h-7 w-7" />
                          <span className="text-sm font-medium">{social.handle}</span>
                      </Link>

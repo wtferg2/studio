@@ -16,7 +16,7 @@ export function Footer() {
             <Link href="#" aria-label="Facebook page">
                 <Facebook className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
-            <Link href="#" aria-label="Instagram page">
+            <Link href="https://www.instagram.com/sudsnwigglespetgrooming/" target="_blank" rel="noopener noreferrer" aria-label="Instagram page">
                 <Instagram className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
             <Link href="mailto:Sudsnwiggles@gmail.com" aria-label="Email us">
