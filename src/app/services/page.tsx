@@ -139,6 +139,9 @@ export default function ServicesPage() {
               </Card>
             )}
           </div>
+          <p className="text-sm text-muted-foreground mt-4 text-center">
+            *If required to complete the service, it will automatically be applied.
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
              {otherAddons.map((category) => (

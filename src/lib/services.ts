@@ -96,11 +96,11 @@ export type AddonCategory = {
 
 export const appointmentAddonsList: AddonService[] = [
   { name: 'Teeth Brushing', price: '10' },
-  { name: 'Flea Shampoo', price: '15' },
+  { name: 'Flea Shampoo*', price: '15' },
   { name: 'Flea Pill', price: '20' },
-  { name: 'Deshed', price: '1/min'},
-  { name: 'Demat', price: '1/min'},
-  { name: 'Shave Down', price: '10-20'},
+  { name: 'Deshed*', price: '1/min'},
+  { name: 'Demat*', price: '1/min'},
+  { name: 'Shave Down*', price: '10-20'},
   { name: 'Express Groom', price: '20' },
   { name: 'Special Handling', price: '15+' },
   { name: 'No Call / No Show', price: '25' },
