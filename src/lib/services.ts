@@ -85,7 +85,7 @@ export const servicePrices: Record<DogSize, Partial<Record<ServiceId, number>>> 
 
 export type AddonService = {
   name: string;
-  price: number;
+  price: string;
 };
 
 export type AddonCategory = {
@@ -99,29 +99,42 @@ export const additionalServices: AddonCategory[] = [
     id: 'creative-grooming',
     title: 'Creative Grooming',
     services: [
-      { name: 'Hair Dye - Paws', price: 10 },
-      { name: 'Hair Dye - Ears & Tail', price: 20 },
-      { name: 'Hair Dye - Full Body', price: 40 },
+      { name: 'Hair Dye - Paws', price: '10' },
+      { name: 'Hair Dye - Ears & Tail', price: '20' },
+      { name: 'Hair Dye - Full Body', price: '40' },
     ],
   },
   {
     id: 'daycare',
     title: 'Daycare',
     services: [
-      { name: 'Half Day', price: 20 },
-      { name: 'Full Day', price: 35 },
+      { name: 'Half Day', price: '20' },
+      { name: 'Full Day', price: '35' },
     ],
   },
   {
     id: 'walk-ins',
     title: 'Walk-In Services',
     services: [
-      { name: 'Anal Glands', price: 15 },
-      { name: 'Nail Trim', price: 20 },
-      { name: 'Face Trim', price: 25 },
-      { name: 'Teeth Cleaning', price: 15 },
-      { name: 'Groom Surcharge', price: 20 },
-      { name: 'Express Groom', price: 20 },
+      { name: 'Anal Glands', price: '15' },
+      { name: 'Nail Trim', price: '20' },
+      { name: 'Face Trim', price: '25' },
+      { name: 'Teeth Cleaning', price: '15' },
+      { name: 'Groom Surcharge', price: '20' },
+
+    ],
+  },
+  {
+    id: 'add-ons',
+    title: 'Appointment Add-Ons',
+    services: [
+      { name: 'Teeth Brushing', price: '10' },
+      { name: 'Flea Shampoo', price: '15' },
+      { name: 'Flea Pill', price: '20' },
+      { name: 'Deshed', price: '1/min'},
+      { name: 'Demat', price: '1/min'},
+      { name: 'Shave Down', price: '10-20'},
+      { name: 'Express Groom', price: '20' },
     ],
   },
 ];

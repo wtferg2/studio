@@ -6,7 +6,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { AppProviders } from '@/app/providers';
 
 export const metadata: Metadata = {
-  title: "Suds n' Wiggles",
+  title: "Suds N' Wiggles",
   description: 'Professional dog grooming with a gentle touch.',
 };
 

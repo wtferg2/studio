@@ -6,8 +6,8 @@ import AboutMe from '../../images/AboutMe.jpg';
 
 
 export const metadata: Metadata = {
-  title: "About Us | Suds n' Wiggles",
-  description: "Learn about the story and passion behind Suds n' Wiggles dog grooming.",
+  title: "About Us | Suds N' Wiggles",
+  description: "Learn about the story and passion behind Suds N' Wiggles dog grooming.",
 };
 
 

@@ -1,4 +1,4 @@
-# **App Name**: Suds n' Wiggles
+# **App Name**: Suds N' Wiggles
 
 ## Core Features:
 
