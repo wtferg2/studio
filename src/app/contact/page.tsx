@@ -53,33 +53,35 @@ export default function ContactPage() {
         </div>
 
         <div className="flex flex-col items-center gap-12">
-            <Card className="w-full">
-                <CardContent className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {contactDetails.map((item) => (
-                        <div key={item.title} className="flex flex-col items-center text-center">
-                            <div className={`mb-4 rounded-full ${item.colorClass === 'text-primary' ? 'bg-primary/10' : 'bg-accent/10'} p-4`}>
-                                <item.icon className={`h-8 w-8 ${item.colorClass}`} />
-                            </div>
-                            <h3 className="font-semibold text-lg">{item.title}</h3>
-                            {item.isLink ? (
-                                <Link href={item.href || '#'} className="text-muted-foreground hover:text-primary transition-colors">
-                                    {item.value}
-                                </Link>
-                            ) : (
-                                <p className="text-muted-foreground">{item.value}</p>
-                            )}
-                        </div>
-                    ))}
-                </CardContent>
-            </Card>
-            <div className="mt-8">
+            <div className="w-full max-w-2xl">
+              <Card>
+                  <CardContent className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                      {contactDetails.map((item) => (
+                          <div key={item.title} className="flex flex-col items-center text-center">
+                              <div className={`mb-4 rounded-full ${item.colorClass === 'text-primary' ? 'bg-primary/10' : 'bg-accent/10'} p-4`}>
+                                  <item.icon className={`h-8 w-8 ${item.colorClass}`} />
+                              </div>
+                              <h3 className="font-semibold text-lg">{item.title}</h3>
+                              {item.isLink ? (
+                                  <Link href={item.href || '#'} className="text-muted-foreground hover:text-primary transition-colors">
+                                      {item.value}
+                                  </Link>
+                              ) : (
+                                  <p className="text-muted-foreground">{item.value}</p>
+                              )}
+                          </div>
+                      ))}
+                  </CardContent>
+              </Card>
+            </div>
+            <div className="mt-8 w-full max-w-2xl">
               <Image 
                 src={Wiggles}
                 alt="A happy groomed dog named Wiggles"
                 data-ai-hint="happy dog"
                 width={600}
                 height={600}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
               />
             </div>
         </div>
