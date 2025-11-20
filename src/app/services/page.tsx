@@ -99,7 +99,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {appointmentAddons && (
-              <Card key={appointmentAddons.id} className="md:col-span-2 flex flex-col">
+              <Card key={appointmentAddons.id} className="md:col-span-3 flex flex-col">
                 <CardHeader className="flex-row items-center gap-4 space-y-0">
                   <div className="inline-block rounded-full bg-primary/10 p-3">
                     <PawPrint className="h-6 w-6 text-primary" />
@@ -109,7 +109,7 @@ export default function ServicesPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3 columns-1 sm:columns-2">
+                  <ul className="space-y-3 columns-1 sm:columns-2 md:columns-3">
                     {appointmentAddons.services.map((service, index) => (
                       <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0 break-inside-avoid">
                         <span className="text-muted-foreground">{service.name}</span>
@@ -120,32 +120,10 @@ export default function ServicesPage() {
                 </CardContent>
               </Card>
             )}
-             {otherAddons.filter(c => c.id === 'walk-ins').map((category) => (
-                <Card key={category.id} className="flex flex-col">
-                    <CardHeader className="flex-row items-center gap-4 space-y-0">
-                    <div className="inline-block rounded-full bg-primary/10 p-3">
-                        <PawPrint className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="font-headline text-2xl text-primary leading-tight">
-                        {category.title}
-                    </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                    <ul className="space-y-3">
-                        {category.services.map((service, index) => (
-                        <li key={index} className="flex justify-between items-center border-b pb-3 last:border-b-0 last:pb-0">
-                            <span className="text-muted-foreground">{service.name}</span>
-                            <span className="font-semibold">${service.price}</span>
-                        </li>
-                        ))}
-                    </ul>
-                    </CardContent>
-                </Card>
-            ))}
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            {otherAddons.filter(c => c.id !== 'walk-ins').map((category) => (
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+             {otherAddons.map((category) => (
                 <Card key={category.id} className="flex flex-col">
                     <CardHeader className="flex-row items-center gap-4 space-y-0">
                     <div className="inline-block rounded-full bg-primary/10 p-3">
