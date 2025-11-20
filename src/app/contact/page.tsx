@@ -52,8 +52,8 @@ export default function ContactPage() {
             <p className="mt-4 text-lg text-muted-foreground">We'd love to hear from you! Reach out to book an appointment or ask any questions.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-            <Card>
+        <div className="flex flex-col items-center gap-12">
+            <Card className="w-full max-w-lg">
                 <CardContent className="p-8 grid grid-cols-1 gap-8">
                     {contactDetails.map((item) => (
                         <div key={item.title} className="flex flex-col items-center text-center">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     ))}
                 </CardContent>
             </Card>
-            <div>
+            <div className="mt-8">
               <Image 
                 src={Wiggles}
                 alt="A happy groomed dog named Wiggles"
