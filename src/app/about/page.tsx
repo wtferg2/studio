@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { PawPrint } from 'lucide-react';
 import type { Metadata } from 'next';
+import AboutMe from '../../images/AboutMe.jpg';
+
 
 export const metadata: Metadata = {
   title: "About Us | Suds n' Wiggles",
@@ -15,7 +17,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="animate-fade-in-left">
             <Image
-              src="https://picsum.photos/seed/20/800/1000"
+              src={AboutMe}
               alt="Owner with a dog"
               data-ai-hint="dog grooming salon"
               width={800}

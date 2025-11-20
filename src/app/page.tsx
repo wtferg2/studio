@@ -6,24 +6,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { Quote } from "lucide-react";
 import Banner from "../images/Banner.png";
+import Maddie from "../images/Maddie.jpg";
+import Hannah from "../images/Hannah.jpg";
+import Dana from "../images/Dana.jpg";
 
+// Testimonials data"
 const testimonials = [
   {
     name: "Maddie",
     text: "I'm so happy with how my two pups look after their groom! Sam and her team are friendly and treat my goobers like family. My babies can be a hand full (cocker spaniels) but Sam got the job done! One summer cut for my boy and a clean up for my girl. Now they smell good and feel good for these hot summer days/nights.",
-    image: "https://picsum.photos/seed/101/400/400",
+    image: Maddie,
     aiHint: "cocker spaniels"
   },
   {
     name: "Hannah",
     text: "Our dog, Wheaties, LOVES Sam and the rest of the team. They are super sweet to him and are always sending me little updates so I'm never concerned. Thrilled and relieved such nice people took over the salon",
-    image: "https://picsum.photos/seed/105/400/400",
+    image: Hannah,
     aiHint: "golden retriever"
   },
   {
     name: "Dana",
     text: "Samantha is truly the \"Pup Whisperer\"! Sam truly cares for my fur baby, she is so kind to all of the dogs in her care, she takes the time to build a relationship with our dog, which is important because it creates trust, not just between she and I, but for my pup as well. Stormy loves going to 'Suds N Wiggles'. Sam is a master at cutting and styling my girl! Stormy always leaves Sam with extra pep in her step! 'Suds N Wiggles' offers grooming AND daycare, I feel safe leaving Stormy in Sam's care! Thank you 'Suds N Wiggles'!",
-    image: "https://picsum.photos/seed/106/400/400",
+    image: Dana,
     aiHint: "happy puppy"
   },
 ];
@@ -31,12 +35,13 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px]">
+      <section style={{backgroundColor: "e5e7eb"}} className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px]">
         <Image
           src={Banner}
           alt="A happy, well-groomed dog"
           data-ai-hint="happy dog"
           fill
+          style={{backgroundColor: "e5e7eb"}}
           className="object-cover"
           priority
         />
