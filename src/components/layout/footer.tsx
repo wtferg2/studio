@@ -1,5 +1,5 @@
 
-import { PawPrint, Facebook, Instagram, Mail } from 'lucide-react';
+import { PawPrint, Instagram, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export function Footer() {
@@ -13,9 +13,6 @@ export function Footer() {
           </p>
         </div>
         <div className="flex items-center gap-6">
-            <Link href="#" aria-label="Facebook page">
-                <Facebook className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
-            </Link>
             <Link href="https://www.instagram.com/sudsnwigglespetgrooming/" target="_blank" rel="noopener noreferrer" aria-label="Instagram page">
                 <Instagram className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>

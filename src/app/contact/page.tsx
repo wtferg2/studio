@@ -1,6 +1,7 @@
 
+
 import { Card, CardContent } from '@/components/ui/card';
-import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -41,12 +42,6 @@ const socialLinks = [
       label: 'Instagram',
       handle: '@sudsnwigglespetgrooming',
       href: 'https://www.instagram.com/sudsnwigglespetgrooming/',
-    },
-    {
-      icon: Facebook,
-      label: 'Facebook',
-      handle: '/pawsitiveimage',
-      href: '#',
     },
 ];
 
