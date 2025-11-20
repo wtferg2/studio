@@ -12,7 +12,7 @@ const contactDetails = [
     title: 'Our Salon',
     value: '10052 Rosecrans Ave Bellflower, CA 90706',
     isLink: false,
-    colorClass: 'text-accent'
+    colorClass: 'text-primary'
   },
   {
     icon: Phone,
@@ -20,7 +20,7 @@ const contactDetails = [
     value: '(562) 306-0735',
     href: 'tel:+1-562-306-0735',
     isLink: true,
-    colorClass: 'text-accent'
+    colorClass: 'text-primary'
   },
   {
     icon: Mail,
@@ -28,7 +28,7 @@ const contactDetails = [
     value: 'Sudsnwiggles@gmail.com',
     href: 'mailto:Sudsnwiggles@gmail.com',
     isLink: true,
-    colorClass: 'text-accent'
+    colorClass: 'text-primary'
   }
 ];
 
