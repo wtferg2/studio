@@ -1,4 +1,3 @@
-
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card';
@@ -81,7 +80,7 @@ export default function ContactPage() {
                 data-ai-hint="happy dog"
                 width={600}
                 height={600}
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                className="w-full h-auto object-cover"
               />
             </div>
         </div>
