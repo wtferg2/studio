@@ -31,10 +31,10 @@ export default function AboutPage() {
             <div className="inline-block rounded-full bg-primary/10 p-3">
               <PawPrint className="h-8 w-8 text-primary" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold font-headline">About Suds N’ Wiggles Dog Grooming in Bellflower, CA</h1>
+            <h1 className="text-4xl md:text-5xl font-bold font-headline">About <strong>Suds N’ Wiggles Dog Grooming</strong> in Bellflower, CA</h1>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
-                Welcome to Suds N’ Wiggles, a locally owned and operated dog grooming salon in Bellflower, CA, proudly serving dogs and their owners in Bellflower and surrounding communities. We’re husband-and-wife owners Samantha and Nik, and our shop is named after Samantha’s beloved senior pup — Wiggles, the 11-year-old pittie. Nik is holding Lucy, his 14-year-old weenie mix. Our pets inspire the care and compassion behind everything we do.
+                Welcome to <strong>Suds N’ Wiggles</strong>, a locally owned and operated dog grooming salon in Bellflower, CA, proudly serving dogs and their owners in Bellflower and surrounding communities. We’re husband-and-wife owners Samantha and Nik, and our shop is named after Samantha’s beloved senior pup — Wiggles, the 11-year-old pittie. Nik is holding Lucy, his 14-year-old weenie mix. Our pets inspire the care and compassion behind everything we do.
               </p>
               <p>
                 If you’re searching for a trusted dog groomer near you, we’re honored to be part of your local community.
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
               <h2 className="text-2xl md:text-3xl font-bold font-headline pt-4">A Safe, Calm, and Stress-Free Dog Grooming Environment</h2>
               <p>
-                Nik works both behind the scenes and in the grooming salon to keep Suds N’ Wiggles running smoothly. From maintaining a clean, organized shop to assisting with bathing and prep, he helps ensure every pet enjoys a safe, low-stress, and happy grooming environment.
+                Nik works both behind the scenes and in the grooming salon to keep <strong>Suds N’ Wiggles</strong> running smoothly. From maintaining a clean, organized shop to assisting with bathing and prep, he helps ensure every pet enjoys a safe, low-stress, and happy grooming environment.
               </p>
               <p>
                 As dedicated animal lovers, we treat every dog who walks through our doors like family — because that’s how we’d want our own pets treated.
@@ -58,7 +58,7 @@ export default function AboutPage() {
 
               <h2 className="text-2xl md:text-3xl font-bold font-headline pt-4">High-Quality, Full-Service Dog Grooming in Bellflower</h2>
               <p>
-                Together, we created Suds N’ Wiggles Dog Grooming to be a place where:
+                Together, we created <strong>Suds N’ Wiggles Dog Grooming</strong> to be a place where:
               </p>
               <ul className="list-disc list-inside space-y-2">
                 <li>Pets receive genuine care and attention</li>
