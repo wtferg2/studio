@@ -17,7 +17,7 @@ export const services: {
     includes: [
       'Bath with premium shampoo & conditioner',
       'Blow-dry & brush out',
-      'Nail trimming',
+      'Nail Trim / Buff',
       'Ear cleaning',
       'Anal gland expression',
       'Puppy cuddles',
@@ -31,7 +31,7 @@ export const services: {
     includes: [
         'Bath with premium shampoo & conditioner',
         'Blow-dry & brush out',
-        'Nail trimming',
+        'Nail Trim / Buff',
         'Ear cleaning',
         'Anal gland expression',
         'Puppy cuddles',
@@ -45,7 +45,7 @@ export const services: {
     includes: [
         'Bath with premium shampoo & conditioner',
         'Blow-dry & brush out',
-        'Nail trimming',
+        'Nail Trim / Buff',
         'Ear cleaning',
         'Anal gland expression',
         'Puppy cuddles',
@@ -62,24 +62,24 @@ export const dogSizes: { id: DogSize; label: string; weight: string }[] = [
 
 export const servicePrices: Record<DogSize, Partial<Record<ServiceId, number>>> = {
     small: {
-        'haircut': 65,
-        'bath-tidy': 55,
-        'bath-brush': 50,
-    },
-    medium: {
         'haircut': 75,
         'bath-tidy': 65,
-        'bath-brush': 55,
+        'bath-brush': 60,
     },
-    large: {
-        'haircut': 95,
-        'bath-tidy': 80,
+    medium: {
+        'haircut': 85,
+        'bath-tidy': 75,
         'bath-brush': 65,
     },
+    large: {
+        'haircut': 105,
+        'bath-tidy': 90,
+        'bath-brush': 75,
+    },
     'extra-large': {
-        'haircut': 115,
-        'bath-tidy': 100,
-        'bath-brush': 90,
+        'haircut': 125,
+        'bath-tidy': 110,
+        'bath-brush': 100,
     },
 };
 
@@ -95,7 +95,7 @@ export type AddonCategory = {
 };
 
 export const appointmentAddonsList: AddonService[] = [
-  { name: 'Teeth Brushing', price: '10' },
+  { name: 'Teeth Cleaning', price: '10' },
   { name: 'Flea Shampoo*', price: '15' },
   { name: 'Flea Pill', price: '20' },
   { name: 'Deshed*', price: '1/min'},
@@ -103,7 +103,7 @@ export const appointmentAddonsList: AddonService[] = [
   { name: 'Shave Down*', price: '10-20'},
   { name: 'Express Groom', price: '20' },
   { name: 'Special Handling*', price: '15' },
-  { name: 'No Call / No Show', price: '25' },
+  { name: 'No Call / No Show', price: '35' },
 ];
 
 
@@ -130,7 +130,7 @@ export const additionalServices: AddonCategory[] = [
     id: 'walk-ins',
     title: 'Walk-In Services',
     services: [
-      { name: 'Anal Glands', price: '15' },
+      { name: 'Anal Glands', price: '20' },
       { name: 'Nail Trim', price: '20' },
       { name: 'Face Trim', price: '25' },
       { name: 'Teeth Cleaning', price: '15' },
